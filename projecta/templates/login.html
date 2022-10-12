@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body align="center" style="background-color:powderblue; font-family:courier;">
+
+<h1 style="font-family:verdana;">Login </h1>
+<form action="{% url 'credentials:login' %}" method="post">
+{% csrf_token %}
+<hr>
+    <label><b>User Name</b></label><br>
+    <input type="text" placeholder="Enter your User Name" name="username"  required style="border:2px solid Tomato;"><br><br>
+
+    <label><b>Password</b></label><br>
+    <input type="password" placeholder="Enter your Password" name="password" required style="border:2px solid Tomato;"><br><br>
+
+    <input type="submit">
+
+</body>
+</html>

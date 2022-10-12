@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body align="center" style="background-color:powderblue; font-family:courier;">
+
+<h1 style="font-family:verdana;">Form </h1>
+<form action="{% url 'credentials:register' %}" method="post">
+{% csrf_token %}
+<hr>
+    <label><b>User Name</b></label><br>
+    <input type="text" placeholder="Enter your User Name" name="u_name"  required style="border:2px solid Tomato;"><br><br>
+
+    <label><b>First Name</b></label><br>
+    <input type="text" placeholder="Enter your First Name" name="f_name" required style="border:2px solid Tomato;"><br><br>
+
+    <label><b>Last Name</b></label><br>
+    <input type="text" placeholder="Enter your Last Name" name="l_name" required style="border:2px solid Tomato;"><br><br>
+
+    <label><b>Email</b></label><br>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required style="border:2px solid Tomato;"><br><br>
+
+    <label><b>Password</b></label><br>
+    <input type="password" placeholder="Enter your Password" name="password" required style="border:2px solid Tomato;"><br><br>
+
+    <label><b>Confirm Password</b></label><br>
+    <input type="password" placeholder="confirm Password" name="c-password" required style="border:2px solid Tomato;"><br><br>
+
+    <hr>
+    <input type="submit">
+</form>
+{% for msg in messages %}
+<h1>{{msg}}</h1>
+{% endfor %}
+</body>
+</html>
